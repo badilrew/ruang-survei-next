@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@theme inline {
+  --color-blue: #4b5fe8;
+  --color-blue-dark: #293f9f;
+  --color-ink: #202b43;
+  --color-muted: #8591a8;
+  --color-line: #e8ecf4;
+  --color-bg: #f4f6fb;
+  --color-green: #24a58a;
+  --color-amber: #e69b35;
+}
+* { box-sizing: border-box; }
+html, body { min-height:100%; }
+body { margin:0; background:#f4f6fb; color:#202b43; font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.5; }
+button,input,textarea,select { font:inherit; }
+button { cursor:pointer; }
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid #aab5ff; outline-offset:2px; }
+@keyframes fade-up { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+@keyframes float-gently { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+.page-transition,.auth-enter { animation:fade-up .35s ease-out both; }
+.auth-panel { animation:float-gently 7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
